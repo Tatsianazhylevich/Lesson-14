@@ -49,7 +49,7 @@ let userLogin = prompt('Введите ваш логин');
 let userPassword = prompt('Введите пароль');
 
 if( userLogin === login && userPassword === password) {
-    alert(`Привет, ${user.login}`);
+    alert(`Привет, ${userLogin}`);
 } else {
     while (userLogin !== login) {
         userLogin = prompt('Такой пользователь не найден. Введите еще раз');
