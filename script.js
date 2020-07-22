@@ -45,26 +45,34 @@ for(key in user) {
 
 // =========================================TASK 2=======================
 
-// var persons = [
-//     {id: 10, name: 'Vasya', age: 28},
-//     {id: 11, name: 'Kolya', age: 16, parentId: 14},
-//     {id: 12, name: 'Anna', age: 37},
-//     {id: 13, name: 'Zoya', age: 9, parentId: 12},
-//     {id: 14, name: 'Arkadiy', age: 45},
-// ];
+var persons = [
+     {id: 10, name: 'Vasya', age: 28},
+     {id: 11, name: 'Kolya', age: 16, parentId: 14},
+     {id: 12, name: 'Anna', age: 37},
+     {id: 13, name: 'Zoya', age: 9, parentId: 12},
+     {id: 14, name: 'Arkadiy', age: 45},
+ ];
 
-// for ( let i = 0; i < persons.length; i++) {
-//     if (persons[i].age >= 18) {
-//         persons[i].adult = true;
-//         persons[i].job = prompt(`Кто вы по профессии, ${persons[i].name}?`);
+let adult = [];
+let child = [];
 
-//     } else {
-//         persons[i].child = true;
-//     }
-//     for( let x = 0; x < persons.length; x++ ) {
-//         if (persons[i].parentId === persons[x].id) {
-//             persons[x].childId = persons[i].id;
-//         }
-//     }
-// }
-// console.log(persons);
+ for(let i=0; i <persons.length; i++) {
+    if (persons[i].age >=18) {
+        adult.push(persons[i]);
+        persons[i].job = prompt(`Кто вы по профессии, ${persons[i].name}?`);
+    } else {
+        child.push(persons[i]);
+    }
+}
+
+
+for(let i=0; i <child.length; i++) {
+    for(let a = 0; a < adult.length; a++) {
+        if(child[i].parentId === adult[a].id) {
+            adult[a].child = child[i].id;
+        }    
+    } 
+}
+console.log(persons);
+console.log(adult);
+console.log(child);
