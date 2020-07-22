@@ -43,6 +43,25 @@ for(key in user) {
     }
 }
 
+// второй вариант
+
+let userLogin = prompt('Введите ваш логин');
+let userPassword = prompt('Введите пароль');
+
+if( userLogin === login && userPassword === password) {
+    alert(`Привет, ${user.login}`);
+} else {
+    while (userLogin !== login) {
+        userLogin = prompt('Такой пользователь не найден. Введите еще раз');
+    }
+    while (userPassword !== password) {
+        userPassword = prompt('Неверно введен пароль. Попробуйте еще раз');
+    }
+    alert('Вы успешно вошли в систему!');
+}
+
+user.login = prompt('Введите ваш логин');
+
 // =========================================TASK 2=======================
 
 var persons = [
